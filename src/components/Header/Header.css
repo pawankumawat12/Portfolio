@@ -1,0 +1,141 @@
+.header {
+  background-color: #07132c;
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.headercontainer {
+  margin: auto;
+  padding: 0 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ffcc;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.headernav {
+  transition: max-height 0.4s ease;
+}
+
+.headerlist {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.headerlink {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.headerlink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00ffab;
+  transition: width 0.6s ease;
+}
+
+.headerlink:hover {
+  color: #00ffab;
+}
+
+.headerlink:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.1s ease;
+}
+
+.rotate1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.rotate2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.fade {
+  opacity: 0;
+}
+
+@media (max-width: 650px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .headernav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #111;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .headernav.show {
+    max-height: 300px;
+  }
+
+  .headerlist {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .headernav.show .headeritem {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .headernav.show .header__title {
+    animation: fadeIn 0.5s ease-in;
+  }
+}
+
+
+
+@media (min-width: 651px) {
+  .headeritem {
+    animation: fadeIn 0.5s ease-in;
+  }
+  .header__title{
+    animation: fadeIn 0.5s ease-in;
+  }
+}

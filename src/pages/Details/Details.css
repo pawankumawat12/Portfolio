@@ -1,0 +1,107 @@
+.what-i-do-section {
+  background-color: #f9fafb;
+  padding: 60px 20px;
+  text-align: center;
+  animation: slideFromTop 1.2s ease forwards;
+}
+
+.what-i-do-section .heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 10px;
+  animation: identifier 1.2s ease forwards;
+}
+
+.what-i-do-section .heading p {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  color: #6b7280;
+  font-size: 16px;
+  animation: identifier 0.8s ease backwards;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  animation: zoomIn 0.6s ease forwards;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.icon {
+  font-size: 36px;
+  color: #3b82f6;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes identifier {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    animation-delay: 0.2s;
+  }
+}
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
