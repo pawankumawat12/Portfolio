@@ -19,7 +19,7 @@ function App() {
   }, []);
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter  basename="/Portfolio">
         <Header />
         <Routes>
           <Route path="/Portfolio" element={<Home />} />
